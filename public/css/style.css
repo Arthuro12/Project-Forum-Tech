@@ -6,3 +6,55 @@
 .footer-list li a {
     text-decoration: none;
 }
+
+/*UserView´s style*/
+.profil-btn {
+    text-align: right;
+    margin-top: 2em;
+}
+
+.profil-btn .btn-link {
+    margin-top: 3em;
+    padding: 1em;
+    color: white;
+    background-color: rgb(21, 109, 4);
+    border-radius: 7px;
+    text-decoration: none;
+
+}
+
+.recipes-btn a {
+    color: rgb(21, 109, 4);
+    text-decoration: none;
+
+}
+
+.user-profil {
+    display: flex;
+    flex-direction: column;
+}
+
+/*.user-avatar {
+    display: flex;
+    flex-direction: column;
+}*/
+.user-avatar img {
+    display: block;
+    float: left;
+}
+
+.user-avatar {
+    margin-top: 4em;
+}
+
+.user-avatar h2 {
+    margin-top: 4em;
+}
+
+.user-avatar,
+.about-me,
+.account {
+    box-shadow: 5px 5px 15px 5px rgba(100, 93, 93, 0.45);
+    margin-bottom: 1em;
+    padding: 1em;
+}

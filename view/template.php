@@ -23,10 +23,10 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Registrierung</a></a>
+                        <a class="nav-link active" aria-current="page" href="SigninView.php">Registrierung</a></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Verbindung</a>
+                        <a class="nav-link" href="Connection.php">Verbindung</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Newsletter</a>
