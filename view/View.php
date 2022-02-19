@@ -35,7 +35,7 @@ class View
             //Beendungder Verzögerungszeit
             return ob_get_clean();
         } else {
-            throw new Exception($file . "existiert nicht");
+            throw new Exception("File '$file' existierrt nicht");
         }
     }
 }

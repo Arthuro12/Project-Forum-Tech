@@ -13,7 +13,7 @@
         <div>
             <div class="row">
                 <ul class="col-8 footer-list">
-                    <li><a href="HomeView.php" class="link-success">Home</a></li>
+                    <li><a href="index.php" class="link-success">Home</a></li>
                     <li><a href="#" class="link-success">About</a></li>
                     <li><a href="#" class="link-success">Partner</a></li>
                     <li><a href="#" class="link-success">Contact</a></li>

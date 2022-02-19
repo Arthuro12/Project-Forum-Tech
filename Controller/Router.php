@@ -1,21 +1,41 @@
 <?php
-
 require_once 'Controller/HomeController.php';
+require_once 'Controller/PublicationController.php';
 require_once 'View/View.php';
 
 class Router
 {
     private $homeCtr;
 
+    private $publicationCtr;
+
     public function __construct()
     {
-        $this->homeCtr = new ControllerHome();
+        $this->homeCtr = new HomeController();
+        $this->publicationCtr = new PublicationController();
     }
 
     public function routerRequest()
     {
         try {
-            $this->homeCtr->home();
+            if (isset($_GET['action'])) {
+                if (isset($_GET['action'])  == 'publication') {
+                    if (isset($_GET['id'])) {
+                        $idPublication = intval($_GET['id']);
+                        if ($idPublication != 0) {
+                            $this->publicationCtr->publication($idPublication);
+                        } else {
+                            throw new Exception("Ungültige ID");
+                        }
+                    } else {
+                        throw new Exception("Nicht definierte ID");
+                    }
+                } else {
+                    throw new Exception("Ungültige Aktion");
+                }
+            } else {
+                $this->homeCtr->home();
+            }
         } catch (Exception $e) {
 
             $this->error($e->getMessage());

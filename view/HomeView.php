@@ -15,13 +15,16 @@ $this->title = "Home"; ?>
         <br>
         <div>
             <span>Veröffentlicht am <?= $publication['publicationdate'] ?></span>
-            <a class="link-success" href="#"> Kommentare</a>
+            <a class="link-success" href="#">
+                Kommentare</a>
         </div><br>
         <div>
             <p>
                 <?= $publication['publicationdescription'] ?>
+                <span>[...]</span>
             </p>
-            <a class="link-success" href="#">Alles lesen</a>
+            <a class=" link-success" href="<?= "index.php?action=publication&id=" . $publication['id'] ?>">Alles
+                lesen</a>
             <?php endforeach; ?>
         </div>
     </div>

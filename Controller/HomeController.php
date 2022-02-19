@@ -3,7 +3,7 @@
 require_once 'Modell/PublicationsModell.php';
 require_once 'View/View.php';
 
-class ControllerHome
+class HomeController
 {
     private $publication;
 
