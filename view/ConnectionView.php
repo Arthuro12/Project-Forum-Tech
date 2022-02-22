@@ -1,6 +1,4 @@
-<?php $title = "Verbindung"; ?>
-
-<?php ob_start() ?>
+<?php $this->title = "Verbindung"; ?>
 
 <body class="container">
     <h2 class="bg-success mt-3">
@@ -29,18 +27,7 @@
     </div>
     <div>
         <p>Sind Sie gerade auf Forum Tech nicht registriert? Registrieren Sie sich um an dem
-            Forum teilnehmen zu können. Das dauert nur <a href="#">Paar Sekunden</a>
+            Forum teilnehmen zu können. Das dauert nur <a class="link-success" href="#">Paar Sekunden</a>
         </p>
     </div>
 </body>
-
-<?php
-require('footer.php');
-?>
-<?php
-$content = ob_get_clean();
-?>
-
-<?php
-require('template.php')
-?>

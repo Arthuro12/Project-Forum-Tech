@@ -13,7 +13,7 @@ class View
     }
 
     //Herstellung des Views
-    public function create($data)
+    public function create($data = null)
     {
         //Herstellung des spezischen Teils des Views
         $content = $this->createFile($this->file, $data);
@@ -22,7 +22,7 @@ class View
         echo $view;
     }
 
-    public function createFile($file, $data)
+    public function createFile($file, $data = null)
     {
         if (file_exists($file)) {
             //Konvertierung des Arrays in Variabel

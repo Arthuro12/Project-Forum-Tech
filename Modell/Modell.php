@@ -24,7 +24,7 @@ abstract class Modell
             try {
                 $this->db = new PDO('mysql:host=localhost;dbname=forum_tech;charset=utf8', 'root', 'root');
             } catch (Exception $e) {
-                die('Erreur : ' . $e->getMessage());
+                die('Error : ' . $e->getMessage());
             }
         }
         return $this->db;

@@ -1,6 +1,4 @@
-<?php $title = "Registrieren"; ?>
-
-<?php ob_start() ?>
+<?php $this->title = "Registrieren"; ?>
 
 <body class="container">
     <h2 class="bg-success mt-3">
@@ -20,14 +18,3 @@
         </div>
     </form>
 </body>
-
-<?php
-require('footer.php');
-?>
-<?php
-$content = ob_get_clean();
-?>
-
-<?php
-require('template.php')
-?>

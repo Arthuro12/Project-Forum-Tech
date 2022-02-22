@@ -32,9 +32,6 @@
 </body>
 
 <?php
-require('footer.php');
-?>
-<?php
 $content = ob_get_clean();
 ?>
 
