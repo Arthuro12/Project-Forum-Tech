@@ -1,23 +1,26 @@
 <?php
+
+require_once 'Modell/UserModell.php';
 require_once 'View/View.php';
 
-class SigninController
+class UserController
 {
-    public function signin()
+    private $user;
+
+    public function __construct()
     {
-        $view = new View("Signin");
-        $view->create();
+        $this->user = new User();
     }
 
     public function userSignin()
     {
         if (isset($_GET['submit'])) {
             if (!empty($_GET['firstName']) && !empty($_GET['lastName']) && !empty($_GET['email']) && !empty($_GET['password'])) {
-                $firstName = htmlspecialchars($_GET['fisrtName']);
+                $firstName = htmlspecialchars($_GET['firstName']);
                 $lastName = htmlspecialchars($_GET['lastName']);
+                $password = password_hash($_GET['password'], PASSWORD_BCRYPT);
                 $email = htmlspecialchars($_GET['email']);
-                $password = hash($_GET['password'], PASSWORD_BCRYPT);
-                $this->homeCtr->home();
+                $user = $this->user->setUser($lastName, $firstName, $password, $email);
             } else {
                 throw new Exception("Füllen Sie alle Felder bitte!");
             }

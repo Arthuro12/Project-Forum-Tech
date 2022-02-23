@@ -13,7 +13,7 @@ class Publication extends Modell
         if ($publication->rowCount() == 1) {
             return $publication->fetch();
         } else {
-            throw new Exception("Es wurde keine Publikation mit der ID " . $idPublication . " gefunden");
+            throw new Exception("Es wurde keine Publikation mit der ID : " . $idPublication . " gefunden");
         }
     }
 }

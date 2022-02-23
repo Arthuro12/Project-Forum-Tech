@@ -14,13 +14,13 @@
             <!--</div>-->
             <h2>Vorname, Nachname</h2>
             <div class="recipes-btn">
-                <a href="UserRecipesView.php">Alle Rezepte sehen</a>
+                <a href="UserRecipesView.php">Meine Publikationen ansehen</a>
             </div>
         </div>
 
         <div class="about-me">
             <h2>Über mich</h2>
-            <p>Name, E-Mail, Telefonnummer</p>
+            <p>Name, E-Mail</p>
         </div>
 
         <div class="account">
