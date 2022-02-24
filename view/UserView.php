@@ -11,7 +11,7 @@
             <img src="../public/images/user_avatar.jpg" width="210" height="200" />
             <!--</div>-->
             <h2>
-                <?= $user['first_name'] . " , "  . $user['last_name'] ?>
+                <?= $user['first_name'] . ", "  . $user['last_name'] ?>
             </h2>
             <div class="recipes-btn">
                 <a href="#">Meine Publikationen ansehen</a>

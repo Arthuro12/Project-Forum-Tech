@@ -4,6 +4,7 @@ require_once 'Controller/SigninController.php';
 require_once 'Controller/ConnectionController.php';
 require_once 'Controller/UserController.php';
 require_once 'Controller/PublicationController.php';
+require_once 'Controller/SearchController.php';
 require_once 'View/View.php';
 
 class Router
@@ -18,6 +19,8 @@ class Router
 
     private $publicationCtr;
 
+    private $searchCtr;
+
     public function __construct()
     {
         $this->homeCtr = new HomeController();
@@ -25,6 +28,7 @@ class Router
         $this->userCtr = new UserController();
         $this->connectionCtr = new ConnectionController();
         $this->publicationCtr = new PublicationController();
+        $this->searchCtr = new SearchController();
     }
 
     public function routerRequest()
@@ -55,6 +59,8 @@ class Router
                 $email = $_GET['email'];
                 $password = $_GET['password'];
                 $this->userCtr->userConnect($email, $password);
+            } elseif (isset($_GET['search'])) {
+                $this->searchCtr->getSearch();
             } else {
                 $this->homeCtr->home();
             }

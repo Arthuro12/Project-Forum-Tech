@@ -38,9 +38,10 @@
                         <a class="nav-link" href="#">Mein Konto</a>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit"> Suchen...</button>
+                <form class="d-flex" action="index.php" method="get">
+                    <input class="form-control me-2" type="search" name="search" placeholder="Search"
+                        aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit" name="submit"> Suchen...</button>
                 </form>
             </div>
         </div>
