@@ -11,6 +11,9 @@
 <body>
     <footer class="container mt-5">
         <div>
+            <p class="text-center fs-5 text-success mt-5">&copy; The Forum of Tech</p>
+        </div>
+        <!--<div>
             <div class="row">
                 <ul class="col-8 footer-list">
                     <li><a href="index.php" class="link-success">Home</a></li>
@@ -36,7 +39,7 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div>-->
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
