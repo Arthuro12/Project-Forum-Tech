@@ -50,7 +50,11 @@ class Router
                 }
             } elseif (isset($_GET['firstName']) && isset($_GET['lastName']) && isset($_GET['email']) && isset($_GET['password'])) {
                 $this->userCtr->userSignin();
-                echo "Ihre Registrierung wurde wahrgenommen";
+                $this->homeCtr->home();
+            } elseif (isset($_GET['email']) && isset($_GET['password'])) {
+                $email = $_GET['email'];
+                $password = $_GET['password'];
+                $this->userCtr->userConnect($email, $password);
             } else {
                 $this->homeCtr->home();
             }

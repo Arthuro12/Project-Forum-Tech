@@ -1,6 +1,4 @@
-<?php $title = "User"; ?>
-
-<?php ob_start() ?>
+<?php $this->title = "User"; ?>
 
 <body class="container">
     <div class="main user-profil">
@@ -12,15 +10,19 @@
             <!--<div class="user-avatar__img">-->
             <img src="../public/images/user_avatar.jpg" width="210" height="200" />
             <!--</div>-->
-            <h2>Vorname, Nachname</h2>
+            <h2>
+                <?= $user['first_name'] . " , "  . $user['last_name'] ?>
+            </h2>
             <div class="recipes-btn">
-                <a href="UserRecipesView.php">Meine Publikationen ansehen</a>
+                <a href="#">Meine Publikationen ansehen</a>
             </div>
         </div>
 
         <div class="about-me">
             <h2>Über mich</h2>
-            <p>Name, E-Mail</p>
+            <p> <strong>Name :</strong> <?= $user['first_name'] . " " .  $user['last_name'] ?>
+                <br> <strong>E-Mail :</strong> <?= $user['e_mail']  ?>
+            </p>
         </div>
 
         <div class="account">
@@ -30,11 +32,3 @@
         </div>
     </div>
 </body>
-
-<?php
-$content = ob_get_clean();
-?>
-
-<?php
-require('template.php')
-?>
