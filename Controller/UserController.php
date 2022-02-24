@@ -29,7 +29,9 @@ class UserController
         }
     }
 
-    public function userConnect($email, $password)
+
+    //Gibt die Persönlich View des Benutzers wenn seine Authentifizierung erfolgreich war
+    public function userConnect($email)
     {
         if (isset($_GET['submit'])) {
             if (!empty($_GET['email']) && !empty($_GET['password'])) {

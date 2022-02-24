@@ -3,6 +3,7 @@ require_once 'Modell/Modell.php';
 
 class Publication extends Modell
 {
+    //Suche einer Publikation nach seiner ID
     public function getPublication($idPublication)
     {
         $sql = "SELECT publication_id AS id, title AS title, publication_description AS publicationdescription, publication_date AS publicationdate

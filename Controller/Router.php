@@ -31,6 +31,7 @@ class Router
         $this->searchCtr = new SearchController();
     }
 
+    //Bearbeitung einer Anfrage nach bestimmten Parameter
     public function routerRequest()
     {
         try {

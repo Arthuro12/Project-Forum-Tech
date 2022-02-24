@@ -13,6 +13,7 @@ class User extends Modell
         return $user;
     }
 
+    //Suche eines Users in der Datenbank
     public function getUser($email)
     {
         $sql = "SELECT * FROM users

@@ -8,7 +8,7 @@ class View
 
     public function __construct($action)
     {
-        //Name der Datei
+        //Name der Datei wird bestimmt
         $this->file = "View/" . $action . "View.php";
     }
 

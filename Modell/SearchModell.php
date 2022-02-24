@@ -4,16 +4,7 @@ require_once 'Modell/Modell.php';
 
 class Search extends Modell
 {
-    /*public function searchPublication()
-    {
-        $sql = "SELECT * FROM publication
-                ORDER BY publication_id DESC
-                WHERE publication_id = ?";
-        $search = $this->requestExecutor($sql);
-
-        return $search;
-    }*/
-
+    //Suche einer Publikation nach dem Titel
     public function searchSpecifiedPublication($s)
     {
 

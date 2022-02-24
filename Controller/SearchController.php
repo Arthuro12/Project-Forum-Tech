@@ -12,6 +12,7 @@ class SearchController
         $this->search = new Search();
     }
 
+    //Gibt das Ergebnis einer Suche zurück
     public function getSearch()
     {
         //$search =  $this->search->searchPublication();
