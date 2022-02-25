@@ -59,6 +59,8 @@ class Router
                 } elseif ($_GET['action'] == 'deconnection') {
                     $this->deconnectionCtr->deconnection();
                     $this->homeCtr->home();
+                } elseif ($_GET['action'] == 'userview') {
+                    $this->userCtr->userView();
                 }
             } elseif (isset($_GET['firstName']) && isset($_GET['lastName']) && isset($_GET['email']) && isset($_GET['password'])) {
                 $this->userCtr->userSignin();

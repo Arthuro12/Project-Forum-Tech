@@ -18,6 +18,7 @@ class UserController
         //Daten aus dem Formular werde genommen und dann in der Datenbank gespeichert
         if (isset($_GET['submit'])) {
             if (!empty($_GET['firstName']) && !empty($_GET['lastName']) && !empty($_GET['email']) && !empty($_GET['password'])) {
+
                 $firstName = htmlspecialchars($_GET['firstName']);
                 $lastName = htmlspecialchars($_GET['lastName']);
                 $password = password_hash($_GET['password'], PASSWORD_BCRYPT);
@@ -36,14 +37,15 @@ class UserController
         if (isset($_GET['submit'])) {
             if (!empty($_GET['email']) && !empty($_GET['password'])) {
                 $email = $_GET['email'];
+                $_SESSION['email'] = $email;
                 session_start();
 
-                $user = $this->user->getUser($email);
+                $user = $this->user->getUser($_SESSION['email']);
                 if (password_verify($_GET['password'], $user['user_password'])) {
                     $_SESSION['auth'] = $user;
-                    //header('Location: index.php');
-                    $view = new View("User");
-                    $view->create(array('user' => $user));
+                    header('Location: index.php');
+                    //$view = new View("User");
+                    //$view->create(array('user' => $user));
                     exit();
                 } else {
                     throw new Exception("ID oder Passwort inkorrekt");
@@ -52,5 +54,13 @@ class UserController
                 throw new Exception("Füllen Sie alle Felder bitte");
             }
         }
+    }
+
+    public function userView()
+    {
+        session_start();
+        $user = $this->user->getUser($_SESSION['email']);
+        $view = new View("User");
+        $view->create(array('user' => $user));
     }
 }
