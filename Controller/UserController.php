@@ -36,11 +36,13 @@ class UserController
     {
         if (isset($_GET['submit'])) {
             if (!empty($_GET['email']) && !empty($_GET['password'])) {
+                //Herstellung einer Session
+                session_start();
                 $email = $_GET['email'];
                 $_SESSION['email'] = $email;
-                session_start();
-
                 $user = $this->user->getUser($_SESSION['email']);
+                var_dump($_GET['password']);
+                var_dump($user['user_password']);
                 if (password_verify($_GET['password'], $user['user_password'])) {
                     $_SESSION['auth'] = $user;
                     header('Location: index.php');
@@ -56,6 +58,7 @@ class UserController
         }
     }
 
+    //Herstellung eines Views mit den persönlichen Informationen eines Users
     public function userView()
     {
         session_start();
