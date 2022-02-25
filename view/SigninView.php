@@ -1,4 +1,6 @@
-<?php $this->title = "Registrieren"; ?>
+<?php
+session_start();
+$this->title = "Registrieren"; ?>
 
 <body class="container">
     <h2 class="bg-success mt-3">

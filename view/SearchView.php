@@ -1,4 +1,6 @@
-<?php $this->title = "Ergebnis"; ?>
+<?php
+session_start();
+$this->title = "Ergebnis"; ?>
 
 <body class="container">
     <?php foreach ($search as $item) : ?>

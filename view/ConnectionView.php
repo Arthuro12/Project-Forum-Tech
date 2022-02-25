@@ -1,4 +1,6 @@
-<?php $this->title = "Verbindung"; ?>
+<?php
+session_start();
+$this->title = "Verbindung"; ?>
 
 <body class="container">
     <h2 class="bg-success mt-3">

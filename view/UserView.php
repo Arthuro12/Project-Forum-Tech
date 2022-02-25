@@ -1,4 +1,6 @@
-<?php $this->title = "User"; ?>
+<?php
+session_start();
+$this->title = "User"; ?>
 
 <body class="container">
     <div class="main user-profil">
@@ -7,14 +9,12 @@
         </div>
 
         <div class="user-avatar">
-            <!--<div class="user-avatar__img">-->
-            <img src="../public/images/user_avatar.jpg" width="210" height="200" />
-            <!--</div>-->
-            <h2>
-                <?= $user['first_name'] . ", "  . $user['last_name'] ?>
-            </h2>
-            <div class="recipes-btn">
-                <a href="#">Meine Publikationen ansehen</a>
+            <img src="public/images/user_avatar.jpg" width="210" height="200" />
+            <div class="user-info">
+                <h2>
+                    <?= $user['first_name'] . ", "  . $user['last_name'] ?>
+                </h2>
+                <a class="link-success" href="#">Meine Publikationen ansehen</a>
             </div>
         </div>
 

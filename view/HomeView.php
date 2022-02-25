@@ -1,4 +1,5 @@
 <?php
+session_start();
 $this->title = "Home"; ?>
 
 <body class="container">

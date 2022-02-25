@@ -2,6 +2,7 @@
 require_once 'Controller/HomeController.php';
 require_once 'Controller/SigninController.php';
 require_once 'Controller/ConnectionController.php';
+require_once 'Controller/DeconnectionController.php';
 require_once 'Controller/UserController.php';
 require_once 'Controller/PublicationController.php';
 require_once 'Controller/SearchController.php';
@@ -17,6 +18,8 @@ class Router
 
     private $connectionCtr;
 
+    private $deconnectionCtr;
+
     private $publicationCtr;
 
     private $searchCtr;
@@ -27,6 +30,7 @@ class Router
         $this->signinCtr = new SigninController();
         $this->userCtr = new UserController();
         $this->connectionCtr = new ConnectionController();
+        $this->deconnectionCtr = new DeconnectionController();
         $this->publicationCtr = new PublicationController();
         $this->searchCtr = new SearchController();
     }
@@ -52,14 +56,17 @@ class Router
                     //throw new Exception("Ungültige Aktion");
                 } elseif ($_GET['action'] == 'connection') {
                     $this->connectionCtr->connection();
+                } elseif ($_GET['action'] == 'deconnection') {
+                    $this->deconnectionCtr->deconnection();
+                    $this->homeCtr->home();
                 }
             } elseif (isset($_GET['firstName']) && isset($_GET['lastName']) && isset($_GET['email']) && isset($_GET['password'])) {
                 $this->userCtr->userSignin();
                 $this->homeCtr->home();
             } elseif (isset($_GET['email']) && isset($_GET['password'])) {
                 $email = $_GET['email'];
-                $password = $_GET['password'];
-                $this->userCtr->userConnect($email, $password);
+                //$password = $_GET['password'];
+                $this->userCtr->userConnect($email);
             } elseif (isset($_GET['search'])) {
                 $this->searchCtr->getSearch();
             } else {

@@ -1,4 +1,5 @@
 <?php
+session_start();
 $this->title = "Publication";
 ?>
 
